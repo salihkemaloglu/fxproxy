@@ -30,7 +30,7 @@ cd sidecar/pkg/middleware/ && go test
 
 ### Solution
 
-* I create two project inside repository, sidecar and dummy app project. Http request are come to sidecar project and after validations sidecar redirect the request to the dummy app project. 
+* I create two projects inside the repository, the sidecar, and the dummy app project. HTTP requests come to the sidecar project and after validations sidecar redirects the request to the dummy app project. 
 
 ##### Steps to start
 
