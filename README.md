@@ -24,6 +24,69 @@ fxporxy code challenge is designed to demonstrate [sidecar pattern](https://docs
 
 ```
 
-go test
+cd sidecar/pkg/middleware/ && go test
 
 ```
+
+### Solution
+
+* I create two project inside repository, sidecar and dummy app project. Http request are come to sidecar project and after validations sidecar redirect the request to the dummy app project. 
+
+##### Steps to start
+
+-  Clone the repo
+  ```
+  git clone https://github.com/salihkemaloglu/fxproxy.git
+   ```
+
+##### Steps to run
+
+1. Go to main directory:
+   ```
+   cd fxproxy/
+   ```
+2. Grant permission: 
+   ```
+   sudo chmod +x ./app/shell/deploy_app.sh
+   ```   
+   ```
+   sudo chmod +x ./sidecar/shell/deploy_sidecar.sh
+   ```  
+3. Run :
+   ```
+   cd app && ./shell/deploy_app.sh
+   ```
+   ```
+   cd sidecar && ./shell/deploy_sidecar.sh
+   ```
+
+ ##### Http request
+  - Validate success request sample:
+   ```
+     curl -X GET \
+    http://localhost:8081/hello
+   ```
+
+   - Success Response:
+
+  ```
+   [
+      "sidecar is working ...",
+      "hello hello"
+   ]
+
+   ```
+  - Validate fault request sample:
+   ```
+     curl -X GET \
+    http://localhost:8081/hello1
+   ```
+  
+   - Fault Response:
+ 
+    406 not acceptable
+    
+## To improve
+![architecture](https://freepngimg.com/thumb/street_fighter/35134-8-street-fighter-ii-image.png)
+
+
