@@ -1,0 +1,1 @@
+protoc pkg/proto/app.proto --go_out=plugins=grpc:. && make remove-omni

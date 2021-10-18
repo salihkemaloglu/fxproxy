@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  sidecar:
+    image: sidecar:latest
+    container_name: sidecar
+    expose:
+      - 8081
+    network_mode: "host"
+    restart: unless-stopped
